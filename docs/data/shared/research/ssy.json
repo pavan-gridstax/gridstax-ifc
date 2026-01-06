@@ -1,0 +1,1 @@
+{"version":"2025-12-29","updated_at":"2025-12-29","scheme":"Sukanya Samriddhi Yojana (SSY)","currency":"INR","parameters":{"deposit_term_years":15,"maturity_years":21,"tax_model":{"eligible_80c":true,"eee":true},"withdrawal_rules":{"partial_after_age":18,"marriage_withdrawal":true}},"rate_schedule":[{"effective_from":"2025-07-01","rate":0.084}]}

@@ -1,15 +1,1 @@
-{
-  "typicalTenures": {
-    "Home Loan": { "months": 240, "note": "5–30 yrs; avg ~15–20 yrs" },
-    "Personal Loan": { "months": 36, "note": "short-term to several years" },
-    "Car Loan": { "months": 72, "note": "1–7 yrs; avg ~6 yrs" },
-    "Education Loan": { "months": 120, "note": "Varies by course and lender" },
-    "Gold Loan": { "months": 24, "note": "Bullet 3–12m; EMI up to 24–36m" },
-    "Two-Wheeler Loan": { "months": 36, "note": "1–5 yrs; many cap at 5 yrs" },
-    "Business Loan": { "months": 60, "note": "Short 1–2 yrs; medium up to 5 yrs" },
-    "Loan Against Property": { "months": 120, "note": "5–15 yrs" },
-    "Credit Card Loan": { "months": 1, "note": "Very short term" },
-    "Consumer Durable Loan": { "months": 24, "note": "6–36 months" },
-    "Plot Loan": { "months": 180, "note": "Around 5–15 yrs; some up to 20 yrs" }
-  }
-}
+{"typicalTenures":{"Home Loan":{"months":240,"note":"5–30 yrs; avg ~15–20 yrs"},"Personal Loan":{"months":36,"note":"short-term to several years"},"Car Loan":{"months":72,"note":"1–7 yrs; avg ~6 yrs"},"Education Loan":{"months":120,"note":"Varies by course and lender"},"Gold Loan":{"months":24,"note":"Bullet 3–12m; EMI up to 24–36m"},"Two-Wheeler Loan":{"months":36,"note":"1–5 yrs; many cap at 5 yrs"},"Business Loan":{"months":60,"note":"Short 1–2 yrs; medium up to 5 yrs"},"Loan Against Property":{"months":120,"note":"5–15 yrs"},"Credit Card Loan":{"months":1,"note":"Very short term"},"Consumer Durable Loan":{"months":24,"note":"6–36 months"},"Plot Loan":{"months":180,"note":"Around 5–15 yrs; some up to 20 yrs"}}}
