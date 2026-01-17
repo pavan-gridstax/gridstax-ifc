@@ -11,13 +11,14 @@
         --bg1: #0b1220;
         --surface: rgba(16, 27, 51, 0.92);
         --surface2: rgba(21, 34, 63, 0.88);
-        --topbar: rgba(16, 27, 51, 0.65);
+        --topbar: rgba(16, 27, 51, 0.60);
         --text: #e8eefc;
         --muted: #b8c3dd;
         --link: #8ab4ff;
         --border: rgba(255,255,255,0.12);
-        --shadow: 0 10px 30px rgba(0,0,0,0.35);
-        --radius: 16px;
+        --shadow: 0 16px 44px rgba(0,0,0,0.38);
+        --radius: 18px;
+        --radiusSm: 14px;
         --brand: #8ab4ff;
         --brandGlow1: rgba(138, 180, 255, 0.12);
         --brandGlow2: rgba(138, 180, 255, 0.05);
@@ -33,16 +34,19 @@
         --muted: rgba(11, 18, 32, 0.70);
         --link: #2563eb;
         --border: rgba(11, 18, 32, 0.10);
-        --shadow: 0 10px 30px rgba(11, 18, 32, 0.14);
+        --shadow: 0 16px 44px rgba(11, 18, 32, 0.16);
         --brand: #2563eb;
         --brandGlow1: rgba(37, 99, 235, 0.14);
         --brandGlow2: rgba(37, 99, 235, 0.06);
       }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-          "Segoe UI Emoji";
-        background: radial-gradient(1200px 600px at 20% 0%, var(--brandGlow1), transparent 60%),
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        background:
+          radial-gradient(1200px 700px at 18% -10%, var(--brandGlow1), transparent 60%),
+          radial-gradient(1000px 600px at 90% 0%, var(--brandGlow2), transparent 55%),
           linear-gradient(180deg, var(--bg1), var(--bg0));
         color: var(--text);
         line-height: 1.6;
@@ -50,7 +54,7 @@
       .wrap {
         max-width: 980px;
         margin: 0 auto;
-        padding: 22px 16px 56px;
+        padding: 18px 16px 56px;
       }
       .topbar {
         display: flex;
@@ -61,8 +65,11 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         background: var(--topbar);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
         box-shadow: var(--shadow);
+        position: sticky;
+        top: 14px;
+        z-index: 10;
       }
       .brand {
         display: flex;
@@ -71,17 +78,19 @@
         min-width: 0;
       }
       .logo {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
         display: grid;
         place-items: center;
         background: linear-gradient(135deg, var(--brandGlow1), var(--brandGlow2));
         border: 1px solid var(--border);
-      }
-      .brandTitle {
         font-weight: 900;
         letter-spacing: 0.2px;
+      }
+      .brandTitle {
+        font-weight: 950;
+        letter-spacing: -0.2px;
         line-height: 1.2;
         white-space: nowrap;
         overflow: hidden;
@@ -128,29 +137,48 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         padding: 22px;
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(8px);
         box-shadow: var(--shadow);
+      }
+      .hero {
+        padding: 10px 0 18px;
       }
       h1, h2, h3 {
         margin: 0 0 12px;
-        line-height: 1.25;
+        line-height: 1.2;
       }
-      h1 { font-size: 28px; letter-spacing: -0.2px; }
-      h2 { font-size: 20px; margin-top: 22px; }
-      h3 { font-size: 16px; margin-top: 14px; color: var(--muted); }
+      h1 { font-size: 30px; letter-spacing: -0.4px; }
+      h2 { font-size: 18px; margin-top: 20px; letter-spacing: -0.2px; }
+      h3 {
+        font-size: 14px;
+        margin-top: 12px;
+        color: var(--muted);
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
       p { margin: 10px 0; }
       ul { margin: 10px 0 10px 20px; }
       a { color: var(--link); text-decoration: none; }
       a:hover { text-decoration: underline; }
       .muted { color: var(--muted); }
       .pill {
-        display: inline-block;
-        padding: 3px 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
         color: var(--muted);
         font-size: 12px;
         margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .pillDot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--brandGlow1), var(--brandGlow2));
+        border: 1px solid var(--border);
       }
       .footer {
         margin-top: 18px;
@@ -166,9 +194,26 @@
       .notice {
         margin-top: 10px;
         padding: 12px 12px;
-        border-radius: 14px;
+        border-radius: var(--radiusSm);
         border: 1px solid var(--border);
         background: rgba(138, 180, 255, 0.10);
+      }
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .toc a {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        color: var(--text);
+        font-weight: 800;
+        font-size: 12px;
       }
       .kv {
         display: grid;
@@ -188,7 +233,7 @@
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="logo" aria-hidden="true">FinStax: SIP, EMI & Tax Calc</div>
+          <div class="logo" aria-hidden="true"><img alt="" width="36" height="36" style="display:block;width:36px;height:36px" src="data:image/webp;base64,UklGRmYDAABXRUJQVlA4IFoDAAAwEACdASpAAEAAPm0yk0ekIqGhJhqsSIANiUAXDSAHMEarb29MA3lOsvcnqfSfieFXXV30jGPEBpAplPjK+ifYM/Vj/jlWzfJHXlcperrzJoesKLVTwsUVzLayaUSEStq48ZM4OSmQ0UsaZousS/mG4edVAq4tuTlNTjjufELSR0qEROofcDmGUkAA/v8AkrB/uQlVeYRHMzSw0koxfL+3WX3u6TbgldnX2wCS7nR9GUoA3jCAmk2+BXt340y3JiQg2TNIgO0S3XsxB6GlXyTxn5q5rUx+PJXzFu9kt/DErtY8ACiBMBNnoAtoupUYAE/rNPKIsLYgazcZvmdza7Apw05j4/8H6FpaQ40VP9KjMFYKOckUHn9g+1xp+fxDF9LWM9RhRXOqkq/Xp97FB5GFotpzaGw2Dzf9fzjEkub+uMIu1VlnVifOLhOu3clk4axjRJCAD5KSI3lXsjtyOoR+u615Y1ITQTwhx6uwqJievG6jNBpmFlQ20AH8P88Wsy2iv1A/3fNnY0q/bmmW/XbfCmeUBh0mHF9gGS70mbKlKSP1FoDG1ME3ezpRUjpHZuJxxmcd+mz78X/VC55FG4KrHsARNMzK6T7BQ/QFjTf6K835pSpZTtTu6UBrmiJSWdBOPMKvxHSYjxd1sLhRblFbhmTj6x4+bz/kPN2kBzfVwAR3mdyq2LQB3wkDXULDHijI19+FQ3241Xt3L6pX8pBHnk70Y3Hbr5SzuxkSWzy0u4X/939ZP15IfzVS4+0sQbO51UNFFKjx88iJxCnOthUUE0sN8i25BKKLooaqFP0LTZsKhae3/EpphSmzIn1JQEakoJ4H5jUmvYrC5J8+BsHR3rK9jR3SKfIrasE4fn3vbEZcEu/8RlaiF9yDn8SbjYD2bhWGTWvm73fMQk2qh6+LZ5KpFxfRZonxBR0chaeib4De7boe6RV0tfrwITMg3HE8wN51oRhl/V2Bk5zkq6DzTrfxPXSSnuKHe/8/SngMXwFpEk1ttlrrVtT+XJw2m5oHFS877+861MtLrkfexDO445pFwtherXA4Y8i997t0UHbL9TyEcxo2JCe8xX1i2AmEcR7yv3xOFQd6tXrX+VKnhgvGjPfvSYVOJyqMimGMDvW2V05wn9T4AAA=" /></div>
           <div style="min-width:0">
             <div class="brandTitle" id="appName">FinStax: SIP, EMI & Tax calculators</div>
             <div class="brandSub" id="pageTitle">Privacy Policy</div>
@@ -335,12 +380,23 @@
         `;
 
         const content = `
-          <div>
-            <span class="pill">${S.appName}</span>
-            <span class="pill">${S.pageTitle}</span>
-          </div>
+          <div class="hero">
+            <div>
+              <span class="pill"><span class="pillDot" aria-hidden="true"></span>${S.appName}</span>
+              <span class="pill">${S.pageTitle}</span>
+            </div>
 
-          <h1>${S.title}</h1>
+            <h1>${S.title}</h1>
+
+            <div class="toc" aria-label="Quick links">
+              <a href="#summary">Summary</a>
+              <a href="#collect">Information we collect</a>
+              <a href="#use">How we use it</a>
+              <a href="#sharing">Sharing</a>
+              <a href="#choices">Your choices</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
 
           <div class="kv" aria-label="Policy metadata">
             <div class="k"><strong>${S.lastUpdatedLabel}:</strong></div>
@@ -351,12 +407,12 @@
 
           <div class="hr"></div>
 
-          <h2>${S.summaryTitle}</h2>
+          <h2 id="summary">${S.summaryTitle}</h2>
           <ul>
             ${li(S.summaryItems)}
           </ul>
 
-          <h2>${S.collectTitle}</h2>
+          <h2 id="collect">${S.collectTitle}</h2>
 
           <h3>${S.collect1Title}</h3>
           <p>${S.collect1Body}</p>
@@ -373,12 +429,12 @@
           <p>${S.learnMore}</p>
           ${learnMoreLinks}
 
-          <h2>${S.useTitle}</h2>
+          <h2 id="use">${S.useTitle}</h2>
           <ul>
             ${li(S.useItems)}
           </ul>
 
-          <h2>${S.sharingTitle}</h2>
+          <h2 id="sharing">${S.sharingTitle}</h2>
           <p>${S.sharingBody}</p>
 
           <h2>${S.retentionTitle}</h2>
@@ -390,7 +446,7 @@
           <h2>${S.exportTitle}</h2>
           <p>${S.exportBody}</p>
 
-          <h2>${S.choicesTitle}</h2>
+          <h2 id="choices">${S.choicesTitle}</h2>
           <ul>
             ${li(S.choicesItems)}
           </ul>
@@ -407,7 +463,7 @@
           <h2>${S.changesTitle}</h2>
           <p>${S.changesBody}</p>
 
-          <h2>${S.contactTitle}</h2>
+          <h2 id="contact">${S.contactTitle}</h2>
           <p>${S.contactBody}</p>
           <p><strong>${S.contactEmailLabel}:</strong> <a href="mailto:${email}">${email}</a></p>
 
