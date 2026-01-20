@@ -274,7 +274,7 @@
             pageTitle: 'Privacy Policy',
             title: 'Privacy Policy',
             lastUpdatedLabel: 'Last updated',
-            lastUpdatedValue: 'Jan 9, 2026',
+            lastUpdatedValue: 'Jan 20, 2026',
             intro:
               'This Privacy Policy explains how <strong>Finstax</strong> (“the App”) handles information when you use the App.',
             noticeTitle: 'Quick note',
@@ -283,6 +283,7 @@
               'The App does <strong>not</strong> require you to create an account.',
               'Some information may be collected by <strong>third-party advertising services</strong> (Google AdMob) to show ads and measure performance.',
               'The App stores some settings locally on your device using on-device storage (e.g., preferences).',
+              'If you enable reminders, the App may send <strong>local notifications</strong> (on-device) based on your settings.',
             ],
             collectTitle: 'Information We Collect',
             collect1Title: '1) Information you provide',
@@ -291,6 +292,8 @@
             collect2Title: '2) On-device storage (local)',
             collect2Body:
               'The App may store some data locally on your device (for example, language settings, app preferences, and usage counters) using local storage mechanisms (such as AsyncStorage). This data stays within the app sandbox on your device.',
+            collect2Body2:
+              'If you enable reminder notifications, the App stores your reminder preference and any locally scheduled notification identifiers on your device so reminders can be managed or disabled later.',
             collect3Title: '3) Advertising / analytics data (third parties)',
             collect3Body:
               'The App uses <strong>Google AdMob</strong> (Google Mobile Ads SDK) to display ads. AdMob may automatically collect certain information to provide, personalize (if enabled), and measure ads, and to prevent fraud/abuse.',
@@ -318,7 +321,7 @@
               'Inputs you enter for calculations are intended to be processed on-device. Locally stored preferences remain on your device until you clear the app data or uninstall the App. Third-party SDK data retention is governed by their respective policies.',
             permissionsTitle: 'Device Permissions',
             permissionsBody:
-              'The App generally does not require sensitive permissions to perform calculations. If you use features like exporting/sharing, the App uses your device\'s sharing mechanisms to export content that you choose.',
+              'The App generally does not require sensitive permissions to perform calculations. If you enable reminders, the App may request notification permission so it can send local notifications. If you use features like exporting/sharing, the App uses your device\'s sharing mechanisms to export content that you choose.',
             exportTitle: 'Exporting / Sharing',
             exportBody:
               'If the App includes features like exporting or sharing (for example, sharing a PDF or result summary), the content you choose to export/share is initiated by you and sent through the system sharing sheet to the apps you select. On Android, exporting may use the system file/folder picker (Storage Access Framework) so you can choose where to save a file; the App may remember your last selected export folder locally on your device for convenience. We do not automatically send your data to our servers.',
@@ -419,6 +422,7 @@
 
           <h3>${S.collect2Title}</h3>
           <p>${S.collect2Body}</p>
+          ${S.collect2Body2 ? `<p>${S.collect2Body2}</p>` : ''}
 
           <h3>${S.collect3Title}</h3>
           <p>${S.collect3Body}</p>
